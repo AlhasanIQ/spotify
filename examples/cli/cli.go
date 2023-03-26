@@ -3,10 +3,11 @@ package cli
 import (
 	"context"
 	"flag"
+	"log"
+
 	"github.com/zmb3/spotify/v2"
 	spotifyauth "github.com/zmb3/spotify/v2/auth"
 	"golang.org/x/oauth2"
-	"log"
 )
 
 var auth = spotifyauth.New(spotifyauth.WithRedirectURL("http://localhost:3000/login_check"))
@@ -26,6 +27,9 @@ func main() {
 func Authorize(code string) error {
 	ctx := context.Background()
 	token, err := auth.Exchange(ctx, code)
+	if err != nil {
+		return err
+	}
 	httpClient := oauth2.NewClient(context.Background(), oauth2.StaticTokenSource(token))
 	client := spotify.New(httpClient)
 
