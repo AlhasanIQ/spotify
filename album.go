@@ -33,7 +33,7 @@ type SimpleAlbum struct {
 	// codes.  Note that al album is considered
 	// available in a market when at least 1 of its
 	// tracks is available in that market.
-	AvailableMarkets []string `json:"available_markets"`
+	AvailableMarkets []string `json:"-"`
 	// A link to the Web API endpoint providing full
 	// details of the album.
 	Endpoint string `json:"href"`

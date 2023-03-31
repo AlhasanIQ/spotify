@@ -16,11 +16,11 @@ type TrackExternalIDs struct {
 
 // SimpleTrack contains basic info about a track.
 type SimpleTrack struct {
-	Album SimpleAlbum `json:"album"`
+	Album   SimpleAlbum    `json:"album"`
 	Artists []SimpleArtist `json:"artists"`
 	// A list of the countries in which the track can be played,
 	// identified by their ISO 3166-1 alpha-2 codes.
-	AvailableMarkets []string `json:"available_markets"`
+	AvailableMarkets []string `json:"-"`
 	// The disc number (usually 1 unless the album consists of more than one disc).
 	DiscNumber int `json:"disc_number"`
 	// The length of the track, in milliseconds.
