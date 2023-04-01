@@ -1,4 +1,4 @@
-module github.com/alhasaniq/spotify
+module github.com/alhasaniq/spotify-sdk
 
 go 1.16
 
